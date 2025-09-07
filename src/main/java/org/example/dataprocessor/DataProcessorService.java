@@ -1,5 +1,7 @@
 package org.example.dataprocessor;
 
+import org.example.dataprocessor.clean.CleaningFactory;
+import org.example.dataprocessor.clean.CleanningInterface;
 import org.example.dataprocessor.enums.AnalysisType;
 import org.example.dataprocessor.enums.CleaningType;
 import org.example.dataprocessor.enums.OutputType;
@@ -29,7 +31,8 @@ public class DataProcessorService {
             AnalysisType analysisType,
             OutputType outputType,
             List<Integer> data) throws Exception {
-
+        cleaningType = CleaningType.REMOVE_ZEROS;
+        CleanningInterface cleaningStrategy = CleaningFactory.getCleaning(cleaningType);
         // TODO: implement using the enums only (no long if/else ladders required,
         // but minimal branching to select behavior by enum is acceptable in this task).
         // Steps:

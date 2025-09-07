@@ -2,7 +2,11 @@ package org.example.dataprocessor.analysis;
 
 import java.util.ArrayList;
 import java.util.List;
+/*
+AnalysisType type
+if(type==Median){return new Median();
 
+ */
 public class Median implements AnalysisInterface {
     @Override
     public int clean(List<Integer> data) {

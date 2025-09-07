@@ -29,7 +29,7 @@ class DataProcessorServiceTest {
     @Test
     void mean_removeNegatives_console() throws Exception {
         double r = svc.process(
-                CleaningType.REMOVE_NEGATIVES,
+                CleaningType.REPLACE_NEGATIVES_WITH_ZEROS,
                 AnalysisType.MEAN,
                 OutputType.CONSOLE,
                 List.of(5, -2, 7, 8)
@@ -41,7 +41,7 @@ class DataProcessorServiceTest {
     @Test
     void median_replaceNegatives_textFile() throws Exception {
         double r = svc.process(
-                CleaningType.REPLACE_NEGATIVES_WITH_ZERO,
+                CleaningType.REPLACE_NEGATIVES_WITH_ZEROS,
                 AnalysisType.MEDIAN,
                 OutputType.TEXT_FILE,
                 List.of(5, -2, 7, 8)
@@ -59,7 +59,7 @@ class DataProcessorServiceTest {
     @Test
     void stdDev_population_textFile() throws Exception {
         double r = svc.process(
-                CleaningType.REPLACE_NEGATIVES_WITH_ZERO,
+                CleaningType.REPLACE_NEGATIVES_WITH_ZEROS,
                 AnalysisType.STD_DEV,
                 OutputType.TEXT_FILE,
                 List.of(2, 4, 4, 4, 5, 5, 7, 9)
@@ -72,7 +72,7 @@ class DataProcessorServiceTest {
     @Test
     void p90_nearest_rank_console() throws Exception {
         double r = svc.process(
-                CleaningType.REMOVE_NEGATIVES,
+                CleaningType.REMOVE_ZEROS,
                 AnalysisType.P90_NEAREST_RANK,
                 OutputType.CONSOLE,
                 List.of(1, 3, 5, 7, 9, 11, 13, 15, 17, 19)
@@ -84,7 +84,7 @@ class DataProcessorServiceTest {
     @Test
     void top3_frequent_count_sum_console() throws Exception {
         double r = svc.process(
-                CleaningType.REMOVE_NEGATIVES,
+                CleaningType.REMOVE_ZEROS,
                 AnalysisType.TOP3_FREQUENT_COUNT_SUM,
                 OutputType.CONSOLE,
                 List.of(5, 5, 5, 1, 1, 2, 2, 3)
