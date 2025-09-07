@@ -1,9 +1,8 @@
 package org.example.dataprocessor.enums;
 
-public enum OutputType {
-    /** Print "Result = <value>" to stdout */
-    CONSOLE,
+import org.example.dataprocessor.outpot.*;
 
-    /** Write "Result = <value>" to target/result.txt (overwrite, create dirs) */
+public enum OutputType {
+    CONSOLE,
     TEXT_FILE
 }

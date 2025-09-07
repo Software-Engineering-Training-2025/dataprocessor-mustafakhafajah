@@ -1,9 +1,16 @@
 package org.example.dataprocessor.enums;
 
+/**
+ * Enum to define various data cleaning strategies.
+ */
 public enum CleaningType {
-    /** Drop all values < 0 */
-    REMOVE_NEGATIVES,
+    REMOVE_ZEROS,
+    REPLACE_NEGATIVES_WITH_ZEROS
+    /**
+     * Method to apply the cleaning strategy to a given value.
+     *
+     * @param value The value to be cleaned.
+     * @return The cleaned value based on the selected strategy.
+     */
 
-    /** Replace all values < 0 with 0 */
-    REPLACE_NEGATIVES_WITH_ZERO
-}
+    }
